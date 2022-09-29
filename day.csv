@@ -1,0 +1,15 @@
+"user_type","day","counts","mean_riding_time"
+"casual","Friday",345330,21.6082129653761
+"casual","Monday",291609,23.7296800967506
+"casual","Saturday",509062,25.6774305159948
+"casual","Sunday",436448,26.7195139321676
+"casual","Thursday",310919,20.4952593226317
+"casual","Tuesday",277485,20.4776638977482
+"casual","Wednesday",292751,19.8772711849547
+"member","Friday",472067,12.3373167721249
+"member","Monday",474709,12.2004166412125
+"member","Saturday",453896,14.014642671449
+"member","Sunday",404361,14.0415480226827
+"member","Thursday",525348,12.0843184263891
+"member","Tuesday",536358,11.9155778105917
+"member","Wednesday",546896,11.9770023002545

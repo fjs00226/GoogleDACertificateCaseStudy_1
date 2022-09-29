@@ -1,0 +1,7 @@
+"user_type","time_cat","counts","mean_riding_time"
+"casual","am_peak",152830,17.0921318894632
+"casual","other",1664972,23.9753549609243
+"casual","pm_peak",645802,22.3877456506277
+"member","am_peak",473130,11.4945805592543
+"member","other",1999069,12.5269250836264
+"member","pm_peak",941436,13.2391118461584
