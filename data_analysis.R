@@ -146,6 +146,10 @@ g1|g2
 total_by_month<-as.data.frame(aggregate(data_all_v1$riding_time,list(data_all_v1$member_casual,data_all_v1$year_month), FUN=sum))
 colnames(total_by_month)<-c("user_type","year_month","total_riding_time")
 ggplot(data=total_by_month,aes(x = year_month, y = total_riding_time, fill = user_type))+geom_col(width=0.5, position = position_dodge(width=0.5))+ theme(aspect.ratio = 1)+ggtitle("Total_riding_time_vs_months")
+
+year_month<-merge(year_month_count, year_month_mean)
+year_month<- merge(year_month, total_by_month)
+write.csv(year_month,"./year_month.csv",row.names = FALSE)
 ## how about different days
 day_count<-as.data.frame(table(data_all_v1$member_casual,data_all_v1$weekday))
 colnames(day_count)<-c("user_type","day","counts")
@@ -159,6 +163,8 @@ colnames(day_mean)<-c("user_type","day","mean_riding_time")
 day_mean$day <- ordered(day_mean$day, levels=c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"))
 day_mean<-day_mean[order(day_mean$day),]
 write.csv(day_mean,"./day_mean.csv",row.names = FALSE)
+day<-merge(day_count,day_mean)
+write.csv(day,"./day.csv",row.names = FALSE)
 ## visualization
 g3<-ggplot(data=day_count,aes(x = day, y = counts, fill = user_type))+geom_col(width=0.5, position = position_dodge(width=0.5))
 g4<-ggplot(data=day_mean,aes(x = day, y = mean_riding_time, fill = user_type))+geom_col(width=0.5, position = position_dodge(width=0.5))
@@ -188,6 +194,8 @@ g5<-ggplot(data=time_cat_count,aes(x = time_cat, y = counts, fill = user_type))+
 g6<-ggplot(data=time_cat_mean,aes(x = time_cat, y = mean_riding_time, fill = user_type))+geom_col(width=0.5, position = position_dodge(width=0.5))
 g5|g6
 
+time_cat<-merge(time_cat_count,time_cat_mean)
+write.csv(time_cat,"./time_cat.csv",row.names = FALSE)
 ## at which station did the users use the bike?
 start_station<-as.data.frame(table(data_all_v1$member_casual,data_all_v1$start_station_name))
 colnames(start_station)<-c("user_type", "start_station","counts")
